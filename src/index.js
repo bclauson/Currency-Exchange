@@ -26,7 +26,6 @@ $(document).ready(function() {
     let currency = $('#currency').val(); 
     $('#currency').val("");
     $('#amount').val("");
-    $('.showAmount').text(`The ammount is ${value}`);
     CurrencyExchange.getCurrency()
       .then(function(response) {
         getElements(response, currency, value);
