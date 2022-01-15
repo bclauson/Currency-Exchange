@@ -2,16 +2,15 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import CurrencyExchange from './CurrencyExchange.js'
+import CurrencyExchange from './CurrencyExchange.js';
 
 function getElements(response, currency, value) {
   if (response.result) {
-    let conversionVal
-    let convertedVal
+    let conversionVal;
+    let convertedVal;
     if (currency in response.conversion_rates) {
       conversionVal = response.conversion_rates[currency];
       convertedVal = conversionVal * value;
-      //convertedVal = convertedVal.toFixed(2);
       $('.showAmount').text(`From ${value} USD to ${currency} the exchange results in ${convertedVal}`);
     } else {
       $('.showAmount').text(`There was an error: ISO 4217 currency code not found (code must be in capitals)`);
