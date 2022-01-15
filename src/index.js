@@ -16,7 +16,7 @@ function getElements(response, currency, value) {
       $('.showAmount').text(`There was an error: ISO 4217 currency code not found (code must be in capitals)`);
     }
   } else {
-    $('.showErrors').text(`There was an error: ${response.message}`);
+    $('.showErrors').text(`There was an error with the API call`);
   }
 }
 
